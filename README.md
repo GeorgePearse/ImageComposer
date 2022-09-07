@@ -22,7 +22,7 @@ https://www.youtube.com/watch?v=voRFbl-GKGY
 
 ## ML integrations
 
-* Eventually you could integrate some Computer Vision package to try to make the images more realistic.
+* Eventually you could integrate some Computer Vision package to try to make the images more realistic. Something like https://machinelearning.apple.com/research/gan
 
 ## Augmentations 
 
