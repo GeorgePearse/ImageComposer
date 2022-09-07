@@ -16,26 +16,77 @@ class BoundingBox:
     self.y2 = y2
 
 
-class AnnotatedImage: 
+# remember, down is up.
+class AnnotatedImage:
     def __init__(
-        self, 
-        background, 
-        foreground, 
+        self,
+        bounding_box,
         foreground_position,
-        bounding_box
+        foreground_path, 
+        background_path
     ):
-        self.background = background
-        self.foreground = foreground
-        self.foreground_position = foreground_position
-        self.bounding_box = bounding_box 
-        self.display()
+        self.foreground_x = foreground_position[0]
+        self.foreground_y = foreground_position[1]
         
-    def display():
-        PLT.imshow(result)
-        PLT.show()
+        self.composed_image = flexible_overlay(
+            background_path, 
+            foreground_path, 
+            self.foreground_x,
+            self.foreground_y
+        )
+        
+        x1, y1, x2, y2 = bounding_box
+        self.x1 = x1 
+        self.y1 = y1
+        self.x2 = x2 
+        self.y2 = y2
+
+        self.image_with_box = add_bounding_box(
+            self.composed_image, 
+            self.x1, 
+            self.y1, 
+            self.x2, 
+            self.y2
+        )
+        
+    def update(self):
+        self.composed_image = flexible_overlay(
+            background_path, 
+            foreground_path, 
+            self.foreground_x,
+            self.foreground_y
+        )
+        
+        self.image_with_box = add_bounding_box(
+            self.composed_image, 
+            self.x1, 
+            self.y1, 
+            self.x2, 
+            self.y2
+        )
     
-    def shift(x, y):
-        self.bounding_box.x1 = self.bounding_box.x1 + x
-        self.bounding_box.x2 = self.bounding_box.x2 + x
-        self.bounding_box.y1 = self.bounding_box.y1 + x
-        self.bounding_box.y2 = self.bounding_box.y2 + x
+    def shift(self, x, y):
+        self.x1 = self.x1 + x
+        self.x2 = self.x2 + x
+        self.y1 = self.y1 + y
+        self.y2 = self.y2 + y
+        self.foreground_x = self.foreground_x + x
+        self.foreground_y = self.foreground_y + y 
+        self.update()
+        
+    
+    def display(self):
+        plot_composed_image(self.image_with_box)
+        
+        
+bounding_box = (160, 100, 190, 150)
+foreground_position = (150, 100)
+
+annotated_image = AnnotatedImage(
+    bounding_box, 
+    foreground_position,
+    "./favpng_tin-can-metal-aluminium-aluminum-can-lid.png",
+    "./conveyor_belt.jpeg"
+)
+
+annotated_image.display()
