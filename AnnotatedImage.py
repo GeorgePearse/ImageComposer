@@ -61,6 +61,9 @@ class BoundingBox:
         
 
 class AnnotatedImage:
+    """
+    There will definitely be some much better pattern for the update.
+    """
     def __init__(
         self,
         bounding_box: BoundingBox,
