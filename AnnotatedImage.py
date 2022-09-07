@@ -2,6 +2,9 @@ import cv2
 import cvzone 
 from matplotlib import pyplot as PLT
 from dataclasses import dataclass
+import glob
+import fiftyone as fo
+
 
 class ValidForegroundSpace: 
     """
@@ -120,14 +123,39 @@ class AnnotatedImage:
         * [] Write composed image to images/ dir
         * [] Write corresponding bounding box to label.json (bounding boxes will need a class)
         * [] Write filepath and other metadata to label.json 
+        
+        https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/index.html#custom-formats
         """
-        
-        
-        with open(coco_label_path) as f: 
-            f.write(self.bounding_box
-                    
-        with open(coco_label_path) as f: 
-            f.write(self.bounding_box
+   
+
+        images_patt = "/path/to/images/*"
+
+        # Ex: your custom label format
+        annotations = {
+            "/path/to/images/000001.jpg": "dog",
+            ....,
+        }
+
+        # Create samples for your data
+        samples = []
+        for filepath in glob.glob(images_patt):
+            sample = fo.Sample(filepath=filepath)
+
+            # Store classification in a field name of your choice
+            label = annotations[filepath]
+            sample["ground_truth"] = fo.Classification(label=label)
+
+            samples.append(sample)
+
+        # Create dataset
+        dataset = fo.Dataset("my-classification-dataset")
+        dataset.add_samples(samples)
+
+                with open(coco_label_path) as f: 
+                    f.write(self.bounding_box
+
+                with open(coco_label_path) as f: 
+                    f.write(self.bounding_box
                     
                     
 class SyntheticDataset:
