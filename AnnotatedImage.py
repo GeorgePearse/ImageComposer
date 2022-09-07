@@ -2,6 +2,16 @@ import cv2
 import cvzone 
 from matplotlib import pyplot as PLT
 
+class ValidForegroundSpace: 
+    """
+    Just use some method for defining polygons in opencv. 
+    
+    Will be easiest if you just sample x and y values and 
+    either allow or disallow them. 
+    """
+    def __init__(self):
+        pass
+
 # remember, down is up.
 class ForegroundObject: 
     def __init__(
