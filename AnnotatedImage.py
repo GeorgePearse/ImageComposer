@@ -142,8 +142,6 @@ class SyntheticDataset:
     
     Rule for good places to position foreground objects need to be defined in the background class.
     At least that's the requirement of the problem I'm focusing on.
-    
-    
     """
     def __init__(self):
         pass
