@@ -15,7 +15,6 @@ class BoundingBox:
     self.y1 = y1 
     self.y2 = y2
 
-
 # remember, down is up.
 class AnnotatedImage:
     def __init__(
@@ -25,6 +24,8 @@ class AnnotatedImage:
         foreground_path, 
         background_path
     ):
+        self.foreground_path = foreground_path
+        self.background_path = background_path
         self.foreground_x = foreground_position[0]
         self.foreground_y = foreground_position[1]
         
@@ -51,8 +52,8 @@ class AnnotatedImage:
         
     def update(self):
         self.composed_image = flexible_overlay(
-            background_path, 
-            foreground_path, 
+            self.background_path, 
+            self.foreground_path, 
             self.foreground_x,
             self.foreground_y
         )
@@ -90,3 +91,4 @@ annotated_image = AnnotatedImage(
 )
 
 annotated_image.display()
+ 
