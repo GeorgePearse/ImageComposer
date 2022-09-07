@@ -16,6 +16,14 @@ A great way to deal with correlated components (my made up name for when a visua
 https://www.youtube.com/watch?v=voRFbl-GKGY
 
 
+## Valid Regions Concept
+
+* Would be great if you could freehand / poly draw a region of an image, upon which the items can be placed, with something like label-studio.
+
+## ML integrations
+
+* Eventually you could integrate some Computer Vision package to try to make the images more realistic.
+
 ## Augmentations 
 
 Just integrate imgaug or albumentations. 
