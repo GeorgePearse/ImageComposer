@@ -24,6 +24,6 @@ Just integrate imgaug or albumentations.
 * Flip
 * Resize 
 * Rotate
+* Change brightness
 
-<img width="698" alt="image" src="https://user-images.githubusercontent.com/47161914/188963018-b81f9744-6985-478d-b8bf-b64cca9a7183.png">
 
