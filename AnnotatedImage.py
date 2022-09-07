@@ -130,3 +130,7 @@ annotated_image = AnnotatedImage(
 
 annotated_image.display()
  
+    
+for x in range(0, 100):
+    annotated_image.shift(1, -1)
+    annotated_image.display()
