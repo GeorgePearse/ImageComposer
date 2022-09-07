@@ -7,3 +7,7 @@ A great way to deal with correlated components (my made up name for when a visua
 
 
 <img width="230" alt="image" src="https://user-images.githubusercontent.com/47161914/188900964-f0d1fd9d-616d-4f8b-962d-da918bb0f108.png">
+
+## Resources 
+
+https://www.youtube.com/watch?v=voRFbl-GKGY
