@@ -16,7 +16,7 @@ class ValidForegroundSpace:
 class ForegroundObject: 
     def __init__(
         self,
-        path,
+        path: str,
         position
     ):
         self.path = path
@@ -24,12 +24,12 @@ class ForegroundObject:
 
 class Background:
     def __init__(
-        self, path
+        self, path: str
     ):
         self.path = path
         
     def flexible_overlay(
-        self, foreground, target_x, target_y
+        self, foreground, target_x: int, target_y: int
     ):
         """
         target_x: higher number = further to the right
@@ -50,11 +50,11 @@ class Background:
 class BoundingBox:
     def __init__(
         self,
-        x1,
-        y1,
-        x2,
-        y2,
-        class
+        x1: int,
+        y1: int,
+        x2: int,
+        y2: int,
+        class: str
     ):
         self.x1 = x1
         self.x2 = x2
@@ -66,9 +66,9 @@ class BoundingBox:
 class AnnotatedImage:
     def __init__(
         self,
-        bounding_box,
-        foreground,
-        background
+        bounding_box: BoundingBox,
+        foreground: ForegroundObject,
+        background: Background
     ):
         self.background = background
         self.foreground = foreground
@@ -134,6 +134,20 @@ class AnnotatedImage:
                     
         with open(coco_label_path) as f: 
             f.write(self.bounding_box
+                    
+                    
+class CrossProductDataset:
+    """
+    Idea here will be to combine backgrounds, with some subset of reasonable foregrounds.
+    
+    Rule for good places to position foreground objects need to be defined in the background class.
+    At least that's the requirement of the problem I'm focusing on.
+    
+    
+    """
+    def __init__(self):
+        pass
+            
         
         
         
