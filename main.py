@@ -19,6 +19,12 @@ def flexible_overlay(background_path, foreground_path, target_x, target_y):
                                #[target_x, hb-hf])
                                [target_x, target_y])
     return result
+
+
+def add_bounding_box(img, x1, y1, x2, y2):
+    image_copy = img.copy()
+    image_with_box = cv2.rectangle(image_copy, (x1, y1), (x2, y2), (255,0,0), 2)
+    return image_with_box
     
     
 def plot_composed_image(result):
