@@ -3,16 +3,9 @@ Package to simplify creating simple synthetic image pytorch datasets for model t
 
 You specify the background and foreground objects, range of feasible positions, and the package does the rest.
 
-A great way to deal with correlated components (my made up name for when a visual property distracts a computer vision model from what it's meant to learn)
+A great way to deal with correlated components (my made up name for when a visual property distracts a computer vision model from what it's meant to learn). What I mean by this is metadata (like a watermark) which correlates with the true classes, but not always. 
 
-
-<img width="230" alt="image" src="https://user-images.githubusercontent.com/47161914/188900964-f0d1fd9d-616d-4f8b-962d-da918bb0f108.png">
-
-<img width="390" alt="image" src="https://user-images.githubusercontent.com/47161914/188908144-03503c7a-0c94-4eb9-b6e3-a60f0227e507.png">
-
-This package is for Object Detection and uses the COCO dataset format as described by fiftyone below: 
-<img width="910" alt="image" src="https://user-images.githubusercontent.com/47161914/188914721-ee205b47-e22a-478f-b5fc-96e20516ce6b.png">
-
+<img width="311" alt="image" src="https://user-images.githubusercontent.com/47161914/188951951-1799e8fa-a011-4f48-9b11-ec9e3bb71282.png">
 
 # Pasting Rules
 
