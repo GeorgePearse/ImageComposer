@@ -30,3 +30,5 @@ def add_bounding_box(img, x1, y1, x2, y2):
 def plot_composed_image(result):
     PLT.imshow(result)
     PLT.show()
+
+ 
