@@ -15,3 +15,15 @@ A great way to deal with correlated components (my made up name for when a visua
 
 https://www.youtube.com/watch?v=voRFbl-GKGY
 
+
+## Augmentations 
+
+Just integrate imgaug or albumentations. 
+* Rotate
+* Add noise 
+* Flip
+* Resize 
+* Rotate
+
+<img width="698" alt="image" src="https://user-images.githubusercontent.com/47161914/188963018-b81f9744-6985-478d-b8bf-b64cca9a7183.png">
+
