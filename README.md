@@ -10,6 +10,11 @@ A great way to deal with correlated components (my made up name for when a visua
 
 <img width="390" alt="image" src="https://user-images.githubusercontent.com/47161914/188908144-03503c7a-0c94-4eb9-b6e3-a60f0227e507.png">
 
+This package is for Object Detection and uses the COCO dataset format as described by fiftyone below: 
+<img width="910" alt="image" src="https://user-images.githubusercontent.com/47161914/188914721-ee205b47-e22a-478f-b5fc-96e20516ce6b.png">
+
+
 ## Resources 
 
 https://www.youtube.com/watch?v=voRFbl-GKGY
+
