@@ -14,6 +14,10 @@ This package is for Object Detection and uses the COCO dataset format as describ
 <img width="910" alt="image" src="https://user-images.githubusercontent.com/47161914/188914721-ee205b47-e22a-478f-b5fc-96e20516ce6b.png">
 
 
+# Pasting Rules
+
+* Define all the reasonable positions for an object to be with a function e.g. x**2 + y**2 < 3 or similar
+
 ## Resources 
 
 https://www.youtube.com/watch?v=voRFbl-GKGY
