@@ -136,7 +136,7 @@ class AnnotatedImage:
             f.write(self.bounding_box
                     
                     
- class SyntheticDataset:
+class SyntheticDataset:
     """
     Idea here will be to combine backgrounds, with some subset of reasonable foregrounds.
     
