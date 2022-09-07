@@ -1,6 +1,7 @@
 import cv2
 import cvzone 
 from matplotlib import pyplot as PLT
+from dataclasses import dataclass
 
 class ValidForegroundSpace: 
     """
@@ -13,14 +14,14 @@ class ValidForegroundSpace:
         pass
 
 # remember, down is up.
+
+
+@dataclass
 class ForegroundObject: 
-    def __init__(
-        self,
-        path: str,
-        position
-    ):
-        self.path = path
-        self.x, self.y = position[0], position[1]
+    path: str 
+    x: int 
+    y: int
+        
 
 class Background:
     def __init__(
@@ -47,20 +48,13 @@ class Background:
                                    [target_x, target_y])
         return result
         
+@dataclass
 class BoundingBox:
-    def __init__(
-        self,
-        x1: int,
-        y1: int,
-        x2: int,
-        y2: int,
-        class: str
-    ):
-        self.x1 = x1
-        self.x2 = x2
-        self.y1 = y1 
-        self.y2 = y2
-        self.class = class
+    x1: int 
+    y1: int 
+    x2: int 
+    y2: int 
+    classification: str
         
 
 class AnnotatedImage:
@@ -149,8 +143,8 @@ class SyntheticDataset:
         
         
         
-bounding_box = BoundingBox(160, 100, 190, 150)
-foreground = ForegroundObject("./favpng_tin-can-metal-aluminium-aluminum-can-lid.png", (150, 100))
+bounding_box = BoundingBox(160, 100, 190, 150, 'tin_can')
+foreground = ForegroundObject("./favpng_tin-can-metal-aluminium-aluminum-can-lid.png", 150, 100)
 background = Background("./conveyor_belt.jpeg")
 
 annotated_image = AnnotatedImage(
