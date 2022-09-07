@@ -53,12 +53,14 @@ class BoundingBox:
         x1,
         y1,
         x2,
-        y2
+        y2,
+        class
     ):
         self.x1 = x1
         self.x2 = x2
         self.y1 = y1 
         self.y2 = y2
+        self.class = class
         
 
 class AnnotatedImage:
@@ -116,6 +118,23 @@ class AnnotatedImage:
     def display(self):
         PLT.imshow(self.image_with_box)
         PLT.show()
+        
+        
+    def export_to_coco(self, coco_label_path: str):
+        """
+        To do: 
+        * [] Write composed image to images/ dir
+        * [] Write corresponding bounding box to label.json (bounding boxes will need a class)
+        * [] Write filepath and other metadata to label.json 
+        """
+        
+        
+        with open(coco_label_path) as f: 
+            f.write(self.bounding_box
+                    
+        with open(coco_label_path) as f: 
+            f.write(self.bounding_box
+        
         
         
 bounding_box = BoundingBox(160, 100, 190, 150)
