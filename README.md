@@ -20,6 +20,11 @@ https://www.youtube.com/watch?v=voRFbl-GKGY
 
 * Would be great if you could freehand / poly draw a region of an image, upon which the items can be placed, with something like label-studio.
 
+
+Want to then be able to repaste the below elsewhere from the polygon label.
+
+<img width="556" alt="image" src="https://user-images.githubusercontent.com/47161914/189086968-bfd8d6cf-dc85-4104-afad-c9ee388a9614.png">
+
 ## ML integrations
 
 * Eventually you could integrate some Computer Vision package to try to make the images more realistic. Something like https://machinelearning.apple.com/research/gan
