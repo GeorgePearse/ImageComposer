@@ -15,8 +15,6 @@ class ValidForegroundSpace:
     """
     def __init__(self):
         pass
-
-
         
 
 class Background:
