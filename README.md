@@ -12,18 +12,14 @@ A great way to deal with correlated components (my made up name for when a visua
 # Pasting Rules
 
 * Define all the reasonable positions for an object to be with a function e.g. x**2 + y**2 < 3 or similar
-
-## Resources 
-
-https://www.youtube.com/watch?v=voRFbl-GKGY
-
-
-## Valid Regions Concept
-
 * Would be great if you could freehand / poly draw a region of an image, upon which the items can be placed, with something like label-studio.
 
 
 Want to then be able to repaste the below elsewhere from the polygon label.
+
+## Resources 
+
+https://www.youtube.com/watch?v=voRFbl-GKGY
 
 
 <img width="556" alt="image" src="https://user-images.githubusercontent.com/47161914/189086968-bfd8d6cf-dc85-4104-afad-c9ee388a9614.png">
