@@ -1,5 +1,7 @@
 # ImageComposer
 
+- [ ] Approach this by creating a bounding box around a single png (e.g. just around the object), apply position based augmentations, then stick it on a background. This is the way to get as much help as possible from Albumentations.
+
 <img width="373" alt="image" src="https://user-images.githubusercontent.com/47161914/189177715-cc7faeb8-5338-41dc-93e7-5acbee951055.png">
 
 ## Docs 
