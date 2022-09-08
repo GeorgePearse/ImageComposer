@@ -6,7 +6,7 @@
 
 Made the mistake of trying to find my own way to shift annotations and foreground images at once. Augmentation packages will definitely already have better methods to support this https://albumentations.ai/docs/getting_started/mask_augmentation/
 
-Still trying to see if anyone else has done this and tidied it up to be useable, https://www.kaggle.com/code/mayukh18/stitch-boxes-augmentation/notebook this notebook seems to do similar if I interpret it rightly.
+Still trying to see if anyone else has done this and tidied it up to be useable, https://www.kaggle.com/code/mayukh18/stitch-boxes-augmentation/notebook this notebook seems to do similar if I interpret it rightly. They call it stitch-boxes. 
 
 https://github.blog/2016-08-22-publish-your-project-documentation-with-github-pages/
 
