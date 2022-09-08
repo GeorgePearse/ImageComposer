@@ -1,5 +1,7 @@
 # ImageComposer
 
+<img width="373" alt="image" src="https://user-images.githubusercontent.com/47161914/189177715-cc7faeb8-5338-41dc-93e7-5acbee951055.png">
+
 ## Docs 
 
 Made the mistake of trying to find my own way to shift annotations and foreground images at once. Augmentation packages will definitely already have better methods to support this https://albumentations.ai/docs/getting_started/mask_augmentation/
