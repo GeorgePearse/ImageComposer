@@ -4,8 +4,6 @@
 
 https://github.blog/2016-08-22-publish-your-project-documentation-with-github-pages/
 
-Package to simplify creating simple synthetic image pytorch datasets for model training. Built for compatibility with FiftyOne
-
 **NB**: Possible that BlenderProc offers all this in a much more powerful way. I just couldn't get it going on my laptop and wanted to start experimenting. 
 
 You specify the background and foreground objects, range of feasible positions, and the package does the rest.
