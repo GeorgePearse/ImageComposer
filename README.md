@@ -34,7 +34,8 @@ Want to then be able to repaste the below elsewhere from the polygon label.
 
 ## Augmentations 
 
-Just integrate imgaug or albumentations. 
+Just integrate imgaug or albumentations. Aim to leave the choice to the user. This package can be augmentation agnostic.
+
 * Rotate
 * Add noise 
 * Flip
