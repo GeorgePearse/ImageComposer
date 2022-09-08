@@ -1,6 +1,8 @@
 # ImageComposer
 Package to simplify creating simple synthetic image pytorch datasets for model training. 
 
+NB: Possible that BlenderProc offers all this in a much more powerful way. I just couldn't get it going on my laptop and wanted to start experimenting.
+
 You specify the background and foreground objects, range of feasible positions, and the package does the rest.
 
 A great way to deal with correlated components (my made up name for when a visual property distracts a computer vision model from what it's meant to learn). What I mean by this is metadata (like a watermark) which correlates with the true classes, but not always. 
