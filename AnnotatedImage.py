@@ -17,11 +17,6 @@ class ValidForegroundSpace:
         pass
 
 
-@dataclass
-class ForegroundObject: 
-    path: str 
-    x: int 
-    y: int
         
 
 class Background:
@@ -49,24 +44,64 @@ class Background:
                                    [target_x, target_y])
         return result
         
+
+        
+
+@dataclass
+class ForegroundObject: 
+    path: str 
+    x: int 
+    y: int
+    
+    
+
+class Background:
+    def __init__(
+        self, path
+    ):
+        self.path = path
+        
+    def flexible_overlay(
+        self, foreground, target_x, target_y
+    ):
+        """
+        target_x: higher number = further to the right
+        target_y: higher number = further down
+        """
+        imgBack = cv2.imread(self.path)
+        imgFront = cv2.imread(foreground.path, cv2.IMREAD_UNCHANGED)
+        imgFront = cv2.resize(imgFront, (0, 5), None, 0.04, 0.04)
+
+
+        hf, wf, cf = imgFront.shape
+        hb, wb, cb = imgBack.shape
+
+        result = cvzone.overlayPNG(imgBack, imgFront, 
+                                   [target_x, target_y])
+        return result
+
+    
 @dataclass
 class BoundingBox:
     x1: int 
     y1: int 
     x2: int 
     y2: int 
-    classification: str
+    label: str
+    
+    def return_fifty_one_style(self) -> list:
+        return [self.x1, self.y1, self.x2-x1, self.y2-y1]
         
 
 class AnnotatedImage:
     """
-    There will definitely be some much better pattern for the update.
+    Update method can definitely be improved / simplified substantially
     """
     def __init__(
         self,
-        bounding_box: BoundingBox,
-        foreground: ForegroundObject,
-        background: Background
+        bounding_box,
+        foreground,
+        background
     ):
         self.background = background
         self.foreground = foreground
@@ -87,6 +122,7 @@ class AnnotatedImage:
             self.bounding_box.y2
         )
         
+        
     def update(self):
         self.composed_image = flexible_overlay(
             self.background.path, 
@@ -103,6 +139,7 @@ class AnnotatedImage:
             self.bounding_box.y2
         )
     
+    
     def shift(self, x, y):
         self.bounding_box.x1 = self.bounding_box.x1 + x
         self.bounding_box.x2 = self.bounding_box.x2 + x
@@ -112,10 +149,27 @@ class AnnotatedImage:
         self.foreground.y = self.foreground.y + y 
         self.update()
         
+        
+    def save_image(self, name: str):
+        cv2.imwrite(name, self.composed_image)
+        
     
     def display(self):
         PLT.imshow(self.image_with_box)
         PLT.show()
+        
+        
+bounding_box = BoundingBox(160, 100, 190, 150,'can')
+foreground = ForegroundObject("./original_can.png", 150, 100)
+background = Background("./conveyor_belt.jpeg")
+
+annotated_image = AnnotatedImage(
+    bounding_box, 
+    foreground,
+    background
+)
+
+annotated_image.display()
         
         
     def export_to_coco(self, coco_label_path: str):
