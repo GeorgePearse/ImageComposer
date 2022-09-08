@@ -16,8 +16,6 @@ class ValidForegroundSpace:
     def __init__(self):
         pass
 
-# remember, down is up.
-
 
 @dataclass
 class ForegroundObject: 
