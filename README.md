@@ -26,6 +26,10 @@ A great way to deal with correlated components (my made up name for when a visua
 * Would be great if you could freehand / poly draw a region of an image, upon which the items can be placed, with something like label-studio.
 
 
+## Cutting out PNGs and getting annotations
+* https://pixlr.com/x/#home
+* https://stackoverflow.com/questions/71739273/generate-json-annotation-file-from-png-mask
+
 Want to then be able to repaste the below elsewhere from the polygon label.
 
 ## Resources 
